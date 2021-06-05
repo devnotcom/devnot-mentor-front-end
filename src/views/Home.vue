@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>DEVNOT MENTOR</h1>
+    <h1>{{$t("base.base")}}</h1>
   </div>
 </template>
 
