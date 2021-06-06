@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>{{$t("base.base")}}</h1>
+    <h1> {{ $t("base.base") }} <faIcon icon="user-secret" /> </h1>
+  
   </div>
 </template>
 

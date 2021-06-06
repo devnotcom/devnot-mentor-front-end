@@ -4,6 +4,9 @@ import router from "./router";
 import store from "./store";
 import i18n from "./locales/index";
 import ApiService from "./services/api.service";
+import { FontawesomeServe } from "./fontawesome/font.awesome";
+
+FontawesomeServe(Vue);
 
 ApiService.init();
 Vue.config.productionTip = false;
