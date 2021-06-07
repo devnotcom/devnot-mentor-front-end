@@ -8,54 +8,19 @@ const apiService = {
     Vue.axios.defaults.baseURL = process.env.VUE_APP_BASE_API;
   },
   get(resource) {
-    return new Promise((resolve, reject) => {
-      Vue.axios
-        .get(`${resource}`)
-        .then((response) => {
-          resolve(response);
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
+    return Vue.axios.get(`${resource}`);
   },
+
   post(resource, params) {
-    return new Promise((resolve, reject) => {
-      Vue.axios
-        .post(`${resource}`, params)
-        .then((response) => {
-          resolve(response);
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
+    return Vue.axios.post(`${resource}`, params);
   },
 
   put(resource, params) {
-    return new Promise((resolve, reject) => {
-      Vue.axios
-        .put(`${resource}`, params)
-        .then((response) => {
-          resolve(response);
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
+    return Vue.axios.put(`${resource}`, params);
   },
 
   delete(resource, params) {
-    return new Promise((resolve, reject) => {
-      Vue.axios
-        .delete(`${resource}`, params)
-        .then((response) => {
-          resolve(response);
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
+    return Vue.axios.delete(`${resource}`, params);
   },
 };
 
