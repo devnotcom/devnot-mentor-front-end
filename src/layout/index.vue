@@ -1,11 +1,17 @@
 <template>
   <div>
+    <AppBar/>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {};
+import AppBar from "../components/AppBar.vue"
+export default {
+  components: {
+    AppBar,
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>
