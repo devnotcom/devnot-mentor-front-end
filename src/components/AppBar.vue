@@ -4,7 +4,7 @@
     <div class="spacer"></div>
     <div class="account-settings">
       <button class="btn">Login</button>
-      <button class="btn">Register</button>
+      <button class="btn" @click="$router.push('/UserAction/StudentRegister')">Register</button>
     </div>
   </div>
 </template>
@@ -22,6 +22,7 @@ export default {};
   min-height: 40px;
   border: none;
   box-shadow: 1px 0px 5px 0px grey;
+  cursor: pointer;
 }
 .appbar {
   box-shadow: 0px 1px 5px 0px rgb(0 0 0 / 30%);
