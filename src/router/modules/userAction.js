@@ -19,6 +19,7 @@ const userAction = {
             name : "MentorRegister",
             component : () => import("../../views/MentorRegister.vue")
         }
+        
     ]
 }
 
