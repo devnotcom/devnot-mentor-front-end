@@ -1,13 +1,6 @@
 <template>
-  <v-container
-    fluid
-    style="height: 100%; background-size: cover; padding:0px 50px"
-    :style="{
-      'background-image':
-        'url(' + require('../assets/img/background.png') + ')',
-    }"
-  >
-    <v-row style="height: 100%;align-items: center;">
+  <v-container fluid class="home-container">
+    <v-row class="content-wrapper">
       <v-col :md="3">
         <v-row v-for="(item, index) in cardData" :key="index">
           <v-col :md="12">
@@ -19,7 +12,7 @@
               :outlined="active == item.id ? false : true"
               :elevation="active == item.id ? '20' : '2'"
               x-large
-              style="height: 80px; transition: all 0.5s ease"
+              class="operation-button"
             >
               {{ item.title }}
             </v-btn>
@@ -28,15 +21,11 @@
       </v-col>
       <v-col :md="9">
         <v-row
-          style="padding: 0px 100px;"
+          class="text-wrapper-row"
           v-for="(item, index) in cardData"
           :key="index"
         >
-          <v-col
-            v-if="active == item.id"
-            :md="6"
-            style="display: flex;align-content: center;flex-wrap: wrap;"
-          >
+          <v-col class="text-wrapper-col" v-if="active == item.id" :md="6">
             <div class="display-4 font-weight-bold">
               {{ item.title }}
             </div>
@@ -49,7 +38,7 @@
               </v-btn>
             </div>
           </v-col>
-          <v-col  v-if="active == item.id" :md="6">
+          <v-col v-if="active == item.id" :md="6">
             <v-img :src="require(`@/assets/img/${item.img}`)"></v-img>
           </v-col>
         </v-row>
@@ -95,3 +84,28 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.home-container {
+  height: 100%;
+  background-size: cover;
+  padding: 0px 50px;
+  background-image: url("../assets/img/background.png");
+}
+.content-wrapper {
+  height: 100%;
+  align-items: center;
+}
+.operation-button {
+  height: 80px !important;
+  transition: all 0.5s ease;
+}
+.text-wrapper-col {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.text-wrapper-row {
+  padding: 0px 100px;
+}
+</style>
