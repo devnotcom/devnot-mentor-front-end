@@ -1,20 +1,16 @@
 <template>
-  <div id="app">
-    
+  <div>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+
 export default {
-  name: "App",
+  name: 'App',
+
+  data: () => ({
+    //
+  }),
 };
 </script>
-
-<style>
-@import "./assets/grid.css";
-body {
-  margin:0 ;
-  padding: 0;
-}
-</style>
