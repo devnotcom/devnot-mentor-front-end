@@ -14,6 +14,11 @@ const base = {
       name: "Profile",
       component: () => import("../../views/Profile.vue"),
     },
+    {
+      path: "Users",
+      name: "Users",
+      component: () => import("../../views/Users.vue"),
+    },
   ],
 };
 

@@ -33,7 +33,7 @@
               {{ item.body }}
             </div>
             <div class="mt-5">
-              <v-btn elevation="4" rounded color="secondary">
+              <v-btn @click="$router.push(item.route)" elevation="4" rounded color="secondary">
                 Daha Fazla
               </v-btn>
             </div>
@@ -60,6 +60,7 @@ export default {
           body:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium dui et eros mollis viverra. In accumsan ipsum pretium pulvinar venenatis.",
           img: "1.png",
+          route: "/users"
         },
         {
           id: 2,
@@ -67,12 +68,14 @@ export default {
           body:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium dui et eros mollis viverra.",
           img: "2.png",
+          route: "/users"
         },
         {
           id: 3,
           title: "Mentor Arıyorum",
           body: "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet",
           img: "3.png",
+          route: "/users"
         },
       ],
     };
