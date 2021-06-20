@@ -4,9 +4,9 @@
 
 # Getting Started
 
-devnot-mentor requires [Node.js](https://nodejs.org/) to run.
+devnot-mentor-front-end projesini çalıştırabilmek için bilgisayarınıza [Node.js](https://nodejs.org/) yüklemelisiniz.
 
-Install the dependencies and run the project in development.
+Bağımlılıkları yükleme ve dev ortamı üzerinde çalıştırma.
 
 ```sh
 $ cd devnot-mentor-frontend
@@ -14,15 +14,14 @@ $ npm install
 $ npm run dev
 ```
 
-For production, staging environments...
+Prod veya staging ortamında çalıştırmak için...
 
 ```sh
 $ npm run staging
 $ npm run production
 ```
 
-Build and minifies the project for all environments.
-
+Tüm ortamlarda build ve minify işlemleri.
 ```sh
 $ npm run build-dev
 $ npm run build-staging
@@ -31,47 +30,46 @@ $ npm run build-production
 
 # Contents
 
-devnot-mentor uses a number of open source projects to work properly:
+devnot-mentor-front-end bir dizi açık kaynak projesi kullanır;
 
-* [VueJS](https://vuejs.org/) - Framework for building user interfaces.
-* [Vuetify](https://vuetifyjs.com/) - Vuetify is a Vue UI Library with beautifully handcrafted Material Components.
-* [Axios](https://github.com/imcvampire/vue-axios) - For HTTP requests (GET-POST-PUT-DELETE).
-* [Vuex](https://vuex.vuejs.org/) - Vuex is a state management pattern + library for Vue.js applications.
-* [i18n](https://kazupon.github.io/vue-i18n/) - Vue I18n is internationalization plugin for Vue.js
-* [FontAwesome](https://github.com/FortAwesome/vue-fontawesome) - To get vector icons and social logos
-* [node.js](https://nodejs.org/en/) - evented I/O for the backend
+* [VueJS](https://vuejs.org/) - Kullanıcı arayüzlerini oluşturduğumuz framework.
+* [Vuetify](https://vuetifyjs.com/) - Material Componentlere sahip bir Vue UI kütüphanesidir.
+* [Axios](https://github.com/imcvampire/vue-axios) - HTTP istekleri (GET , POST , PUT , DELETE) için kullanılan kütüphane.
+* [Vuex](https://vuex.vuejs.org/) - Vuex kütüphanesi ile state yönetimi.
+* [i18n](https://kazupon.github.io/vue-i18n/) - Çoklu dil desteği kütüphanesi
+* [FontAwesome](https://github.com/FortAwesome/vue-fontawesome) - Vektör ikonlar
 
 # Documentation
 
 ### Architecture
 
-📁 Assets - to store your images and styles.
+📁 Assets - Fotoğraf ve stillerimizi sakladığımız klasör
 
-📁 Services - to describe your services like API or JWT service.
+📁 Services - JWT yada API servislerini tanımladığımız klasör
 
-📁 Components - to create your component and use every page.
+📁 Components - Sayfa bileşenlerinin bulunduğu klasör(Appbar, Sidebar, Cards etc.).
 
-📁 Entities - to describe your entities and form elements.
+📁 Entities - Form elemanları için tanımlanan entitiler.
 
-📁 Plugins - to describe your plugins like font-awesome or vuetify
+📁 Plugins - Fontawesome Vuetify gibi eklentilerin yönetildiği klasör
 
-📁 Layout - Covers pages in folder view.
+📁 Layout - Sayfa yerleşimleri.
 
-📁 Locales - Describe words in tr and en folders and use in view page.
+📁 Locales - Çoklu dil desteği
 
-📁 Router - Create a new modules and describe your route.  After that call the module in index.js. Don't forget U should  call layout each module if you wanna use layout.dos
+📁 Router - Projede kullanılacak routeların tanımlamaları.
 
-📁 Store - to store your datas with vuex store.
+📁 Store - Store yönetimi
 
-📁 Views - Already you know .
+📁 Views - Bunu zaten biliyorsun.
 
 ### Routing, layout and views
 
-Instead of posting my pages directly to App.vue, I created a middleware. Thus i can describe to different content placeholder for my Vue pages.  It's really easy to use. You will learn.
+Sayfalarımızı doğrudan App.vue'ye göndermek yerine bir ara katman oluşturduk. Böylece Vue sayfalarımız için farklı içerik yer tutucularını tanımlayabiliriz. Kullanımı gerçekten çok kolay. Öğreneceksiniz.
 
 ##### - Layout
 
-Layout is a vue page. You can create your content placeholder.
+Layout bir vue sayfasıdır. İçerik yer tutucunuzu oluşturabilirsiniz.
 
 ```html
 <v-app>
@@ -86,7 +84,7 @@ Layout is a vue page. You can create your content placeholder.
 
 ##### - Describe Routes
 
-Create a new module in **/router/modules** . 
+**/router/modules** içerinde bir modül oluşturun . 
 
 ```javascript
 import Layout from "@/layout/index.vue";
@@ -105,9 +103,9 @@ const base = {
 export default base;
 ```
 
-**Import** your layaut from /layout folder.  Describe root path and add layout as component. Childrens of root path is your view pages.
+Layoutunuzu /layout klasöründen **Import** edin.  Kök route tanımlayın ve layoutunuzu component olarak ekleyin. Children dizininin içerisindeki componentler sayfalarınız olmalı.
 
-Describe your modules in **index.js**
+Modüllerinizi **index.js** içerisinde import edin.
 
 ```javascript
 import base from "@/router/modules/base";
@@ -124,9 +122,9 @@ const router = new VueRouter({
 
 ### State Management
 
-Vuex is a state management pattern + library for Vue.js applications. Describe your actions.type and mutations.type as a constant in store folder.
+Vuex, Vue.js uygulamaları için bir durum yönetimi modeli/kitaplığıdır. action.type ve mutasyons.type öğelerinizi store klasöründe bir **MAGIC STRING** olarak tanımlayın.
 
-**in actions.tpye.js**
+**actions.tpye.js** içerisinde
 
 ```javascript
 //#region Base
@@ -138,7 +136,7 @@ export const BASE_DELETE_METHOD = "baseDeleteMethod";
 
 ```
 
-**in mutations.type.js**
+**mutations.type.js** içerisinde
 
 ```javascript
 //#region Base
@@ -146,15 +144,15 @@ export const BASE_SET_METHOD = "baseSetMethod";
 //#endregion
 ```
 
-Create a new module in **modules** folder and import  ***api.service***  from common folder and  import actions.type and mutations.type
+**modules** klasöründe yeni bir modül tanımlayın. Api servisini, action ve mutation tanımlamalarınızı import edin.
 
 ```javascript
-import apiService from "@/common/api.service";
+import apiService from "@/services/api.service";
 import { BASE_GET_METHOD,} from "@/store/actions.type";
 import { BASE_SET_METHOD } from "@/store/mutations.type";
 ```
 
-describe your **actions** constant
+**actions** sabitini tanımlayın.
 
 ```javascript
 const actions = {
@@ -174,7 +172,7 @@ const actions = {
 }
 ```
 
-After getting data from API we commit to the **mutation**. Describe your mutation constant.
+API'den bir data döndüğünde mutation'a commit atın.
 
 ```javascript
 const mutations = {
@@ -184,7 +182,7 @@ const mutations = {
 };
 ```
 
-Create **state** and **getters** constant
+**state** ve **getters** sabitlerini tanımlayın
 
 ```javascript
 const state = {
