@@ -2,7 +2,7 @@
 <img width="500" src="https://user-images.githubusercontent.com/50195250/122681498-3a4d2f00-d1fd-11eb-9dac-14d84fc568e0.png">
 </p>
 
-# Getting Started
+# Başlarken
 
 devnot-mentor-front-end projesini çalıştırabilmek için bilgisayarınıza [Node.js](https://nodejs.org/) yüklemelisiniz.
 
@@ -28,7 +28,7 @@ $ npm run build-staging
 $ npm run build-production
 ```
 
-# Contents
+# Paketler
 
 devnot-mentor-front-end bir dizi açık kaynak projesi kullanır;
 
@@ -39,9 +39,9 @@ devnot-mentor-front-end bir dizi açık kaynak projesi kullanır;
 * [i18n](https://kazupon.github.io/vue-i18n/) - Çoklu dil desteği kütüphanesi
 * [FontAwesome](https://github.com/FortAwesome/vue-fontawesome) - Vektör ikonlar
 
-# Documentation
+# Dökümantasyon
 
-### Architecture
+### Mimari
 
 📁 Assets - Fotoğraf ve stillerimizi sakladığımız klasör
 
@@ -63,7 +63,7 @@ devnot-mentor-front-end bir dizi açık kaynak projesi kullanır;
 
 📁 Views - Bunu zaten biliyorsun.
 
-### Routing, layout and views
+### Routing, layout ve views
 
 Sayfalarımızı doğrudan App.vue'ye göndermek yerine bir ara katman oluşturduk. Böylece Vue sayfalarımız için farklı içerik yer tutucularını tanımlayabiliriz. Kullanımı gerçekten çok kolay. Öğreneceksiniz.
 
@@ -82,7 +82,7 @@ Layout bir vue sayfasıdır. İçerik yer tutucunuzu oluşturabilirsiniz.
 </v-app>
 ```
 
-##### - Describe Routes
+##### - Route tanımlamaları
 
 **/router/modules** içerinde bir modül oluşturun . 
 
@@ -120,7 +120,7 @@ const router = new VueRouter({
 
 ```
 
-### State Management
+### State Yönetimi
 
 Vuex, Vue.js uygulamaları için bir durum yönetimi modeli/kitaplığıdır. action.type ve mutasyons.type öğelerinizi store klasöründe bir **MAGIC STRING** olarak tanımlayın.
 
@@ -195,6 +195,3 @@ const getters = {
 };
 ```
 
-
-
-### Languages and technologies
