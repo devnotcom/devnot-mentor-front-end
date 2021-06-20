@@ -1,5 +1,5 @@
 <p align="center">
-<img width="500" src="https://user-images.githubusercontent.com/50195250/122681498-3a4d2f00-d1fd-11eb-9dac-14d84fc568e0.png">
+<img height="300" src="https://user-images.githubusercontent.com/43035417/122687424-17337700-d21f-11eb-9d6b-26000d720291.jpg">
 </p>
 
 # Başlarken
