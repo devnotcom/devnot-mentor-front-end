@@ -34,11 +34,6 @@ export default {
       isLoginActive: true,
     };
   },
-  watch: {
-    isLoginActive(val) {
-      console.log(val);
-    },
-  },
 };
 </script>
 

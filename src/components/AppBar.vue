@@ -18,6 +18,9 @@
     <div class="mx-4">
       <v-btn outlined>Kayıt ol</v-btn>
     </div>
+     <div class="mx-4">
+      <v-btn @click="$router.push('/Profile')" outlined>Profil</v-btn>
+    </div>
   </v-app-bar>
 </template>
 
