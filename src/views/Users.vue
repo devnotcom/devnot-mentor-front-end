@@ -8,7 +8,7 @@
       </v-col>
       <v-col>
         <v-row>
-          <v-col :md="3" v-for="(item, index) in profiles" :key="index">
+          <v-col :sm="12" :md="4" :lg="3" v-for="(item, index) in profiles" :key="index">
             <Card :profile="item"
           /></v-col>
         </v-row>

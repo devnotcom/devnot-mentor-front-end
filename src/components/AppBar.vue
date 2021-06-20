@@ -13,7 +13,7 @@
 
     <v-spacer></v-spacer>
     <div class="mx-4">
-      <v-btn outlined>Giriş yap</v-btn>
+      <v-btn outlined @click="$router.push('/Login')">Giriş yap</v-btn>
     </div>
     <div class="mx-4">
       <v-btn outlined>Kayıt ol</v-btn>
