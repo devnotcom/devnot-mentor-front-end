@@ -5,7 +5,7 @@ import store from "./store";
 import i18n from "./locales/index";
 import ApiService from "./services/apiService";
 import { FontawesomeServe } from "./plugins/fontawesome/fontAwesome";
-
+import vuetify from './plugins/vuetify'
 FontawesomeServe(Vue);
 
 ApiService.init();
@@ -15,5 +15,6 @@ new Vue({
   i18n,
   store,
   router,
-  render: (h) => h(App),
+  vuetify,
+  render: (h) => h(App)
 }).$mount("#app");
