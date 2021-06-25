@@ -6,13 +6,13 @@
 
 # Devnot Nedir?
 
-Blog yazıları yayınlayan, yazılım konferansları, buluşmalar ve kamplar düzenleyen yazılım geliştirici topluluğudur.
+Güncel yazılım konularıyla ilgili yazılar yayınlayan, yazılım konferansları, buluşmalar ve kamplar düzenleyen yazılım geliştirici topluluğudur.
 
 
 
-# Projenin Amacı Nedir?
+# Devnot Mentor Projesi Nedir?
 
-Yazılımcı adaylarının ve yazılım geliştiricilerin yetkinliklerini arttırmak adına Devnot Mentor projesini hayata geçiriyoruz.
+Yazılım alanında kendini geliştirmek isteyen öğrencilerin(mentilerin) kendilerinden daha tecrübeli yazılımcılar(mentorlar) bulmalarını, onlarla tanışmalarını ve düzenli görüşmeler yapmalarını sağlayacak açık kaynak kod bir topluluk projesidir.
 
 
 
