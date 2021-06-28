@@ -12,16 +12,7 @@ const ApiService = {
   },
 
   post(resource, params) {
-    return new Promise((resolve, reject) => {
-      Vue.axios
-        .post(`${resource}`, params)
-        .then((response) => {
-          resolve(response);
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
+    return Vue.axios.post(`${resource}`, params);
   },
 
   put(resource, params) {
