@@ -3,7 +3,7 @@ import axios from "axios";
 import VueAxios from "vue-axios";
 
 Vue.use(VueAxios, axios);
-const apiService = {
+const ApiService = {
   init() {
     Vue.axios.defaults.baseURL = process.env.VUE_APP_BASE_API;
   },
@@ -12,7 +12,16 @@ const apiService = {
   },
 
   post(resource, params) {
-    return Vue.axios.post(`${resource}`, params);
+    return new Promise((resolve, reject) => {
+      Vue.axios
+        .post(`${resource}`, params)
+        .then((response) => {
+          resolve(response);
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    });
   },
 
   put(resource, params) {
@@ -24,4 +33,4 @@ const apiService = {
   },
 };
 
-export default apiService;
+export default ApiService;

@@ -1,35 +1,72 @@
 <template>
   <v-container fluid>
     <v-row>
-      <v-col style="max-width: fit-content;">
+      <v-col :cols="3">
         <v-card>
-          <ProfileNavigation v-on:mini="miniProp = $event"  v-on:isProfileCardActiveProp="isProfileCardActive = $event" />
+          <v-col class="d-flex justify-end pad-0">
+            <v-btn x-large icon>
+              <v-icon>mdi-pencil</v-icon>
+            </v-btn>
+          </v-col>
+          <v-col class="text-center" :cols="12">
+            <v-avatar color="primary" size="150"></v-avatar>
+          </v-col>
+          <v-col class="text-center" :cols="12">
+            <v-card-title class="pad-0 justify-center">
+              {{ userInfo.fullName }}
+            </v-card-title>
+          </v-col>
+          <v-col class="text-center" :cols="12">
+            <v-card-subtitle class="pad-0">
+              {{ userInfo.title }}
+            </v-card-subtitle>
+          </v-col>
+          <v-col :cols="12" class="text-center">
+            <v-btn
+              v-for="(item, index) in userInfo.social"
+              :key="index"
+              class="mx-2"
+              fab
+              dark
+              medium
+              :color="item.color"
+              style="font-size:16px"
+            >
+              <faIcon :icon="['fab', item.icon]" />
+            </v-btn>
+          </v-col>
+          <v-col :cols="12">
+            <v-card-subtitle>{{ userInfo.description }}</v-card-subtitle>
+          </v-col>
+
+          <v-divider></v-divider>
+          <v-col :cols="12">
+            <v-chip
+              v-for="(item, index) in userInfo.skills"
+              :key="index"
+              class="ma-2"
+              color="primary"
+              text-color="white"
+            >
+              {{ item.name }}
+              <v-icon right>
+                mdi-star
+              </v-icon>
+            </v-chip>
+          </v-col>
         </v-card>
       </v-col>
-      <v-col>
-        <v-card>
-          <ProfileCard
-            v-if="isProfileCardActive == true"
-            :userInfo="userInfo"
-          />
-        </v-card>
+      <v-col :cols="9">
+        <v-card>test2</v-card>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import ProfileCard from "../components/ProfileCard.vue";
-import ProfileNavigation from "../components/ProfileNavigation.vue";
 export default {
-  components: {
-    ProfileCard,
-    ProfileNavigation,
-  },
   data() {
     return {
-      isProfileCardActive: true,
-      mini: false,
       userInfo: {
         id: 1,
         title: "Ünvan",
