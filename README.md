@@ -2,6 +2,25 @@
 <img height="300" src="https://user-images.githubusercontent.com/43035417/122687424-17337700-d21f-11eb-9d6b-26000d720291.jpg">
 </p>
 
+
+
+# Devnot Nedir?
+
+Güncel yazılım konularıyla ilgili yazılar yayınlayan, yazılım konferansları, buluşmalar ve kamplar düzenleyen yazılım geliştirici topluluğudur.
+
+
+
+# Devnot Mentor Projesi Nedir?
+
+Yazılım alanında kendini geliştirmek isteyen öğrencilerin(mentilerin) kendilerinden daha tecrübeli yazılımcılar(mentorlar) bulmalarını, onlarla tanışmalarını ve düzenli görüşmeler yapmalarını sağlayacak açık kaynak kod bir topluluk projesidir.
+
+
+
+Yazılımcı olmayı veya mesleğinde daha iyi noktalara gelmeyi hedefleyen kişileri(öğrenci) bu program kapsamında bir mentorle eşleştirerek düzenli görüşmeler yapmalarını amaçlamaktayız. Bu görüşmelerde öğrenciler mentorlerine sorular sorabilecek, çözmekte zorlandıkları konularda yardım isteyebilecek, gelişimleri için uygun kaynak önerilerini dinleyebilecekler.
+
+
+
+
 # Başlarken
 
 devnot-mentor-front-end projesini çalıştırabilmek için bilgisayarınıza [Node.js](https://nodejs.org/) yüklemelisiniz.
