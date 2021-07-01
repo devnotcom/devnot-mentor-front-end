@@ -67,7 +67,9 @@ export default {
       this.$store
         .dispatch(USER_LOGIN, obj)
         .then((res) => {
-          console.log(res);
+          if (res.data.success) {
+            this.$router.push("/");
+          }
         })
         .catch((err) => {
           console.log(err);

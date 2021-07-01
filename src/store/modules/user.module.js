@@ -1,15 +1,17 @@
-import ApiService from "@/services/ApiService";
+import ApiService from "@/services/apiService";
 import { USER_LOGIN } from "@/store/actions.type";
 import { SET_USER } from "@/store/mutations.type";
 
-const state = {};
+const state = {
+  isAuth : false,
+};
 const getters = {};
 const actions = {
   [USER_LOGIN](context, payload) {
     return new Promise((resolve, reject) => {
       ApiService.post("/users/login", payload)
         .then((response) => {
-          context.commit(SET_USER, response);
+          context.commit(SET_USER, response.data);
           resolve(response);
         })
         .catch((err) => {
@@ -20,7 +22,15 @@ const actions = {
 };
 const mutations = {
   [SET_USER](state, payload) {
-    window.localStorage.setItem("user", JSON.stringify(payload.data));
+    state.isAuth = true;
+    window.localStorage.setItem(
+      "user-token",
+      JSON.stringify(payload.data.token)
+    );
+    window.localStorage.setItem(
+      "user-profile",
+      JSON.stringify(payload.data.user)
+    );
   },
 };
 
