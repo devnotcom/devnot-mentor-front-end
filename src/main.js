@@ -11,6 +11,9 @@ FontawesomeServe(Vue);
 ApiService.init();
 Vue.config.productionTip = false;
 
+
+
+
 new Vue({
   i18n,
   store,

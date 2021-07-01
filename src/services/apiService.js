@@ -3,7 +3,7 @@ import axios from "axios";
 import VueAxios from "vue-axios";
 
 Vue.use(VueAxios, axios);
-const apiService = {
+const ApiService = {
   init() {
     Vue.axios.defaults.baseURL = process.env.VUE_APP_BASE_API;
   },
@@ -24,4 +24,4 @@ const apiService = {
   },
 };
 
-export default apiService;
+export default ApiService;

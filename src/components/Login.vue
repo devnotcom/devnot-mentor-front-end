@@ -8,16 +8,22 @@
     </div>
     <v-row>
       <v-col :cols="12" :md="12" class="pad-0">
-        <v-text-field label="Username" outlined rounded></v-text-field>
+        <v-text-field
+          v-model="username"
+          label="Username"
+          outlined
+          rounded
+        ></v-text-field>
       </v-col>
 
       <v-col :cols="12" :md="12" class="pad-0">
         <v-text-field
+          v-model="password"
+          label="Username"
           outlined
           rounded
           :append-icon="isPasswordShow ? 'mdi-eye' : 'mdi-eye-off'"
           :type="isPasswordShow ? 'text' : 'password'"
-          label="Password"
           @click:append="isPasswordShow = !isPasswordShow"
         ></v-text-field>
       </v-col>
@@ -27,22 +33,48 @@
       </v-col>
 
       <v-col :cols="12" :md="12">
-        <v-btn block rounded color="primary" x-large>Sign in</v-btn>
+        <v-btn block rounded color="primary" x-large @click="login()"
+          >Sign in</v-btn
+        >
       </v-col>
       <v-col :cols="12" :md="12">
         Don't have an account?
-        <span class="sign-up" @click="$emit('isLoginActiveProp' , false)">Sign up Here</span>
+        <span class="sign-up" @click="$emit('isLoginActiveProp', false)"
+          >Sign up Here</span
+        >
       </v-col>
     </v-row>
   </v-form>
 </template>
 
 <script>
+import { USER_LOGIN } from "@/store/actions.type";
 export default {
   data() {
     return {
       isPasswordShow: false,
+      username: null,
+      password: null,
     };
+  },
+  methods: {
+    login() {
+      let obj = {
+        userName: this.username,
+        password: this.password,
+      };
+
+      this.$store
+        .dispatch(USER_LOGIN, obj)
+        .then((res) => {
+          if (res.data.success) {
+            this.$router.push("/");
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
   },
 };
 </script>
