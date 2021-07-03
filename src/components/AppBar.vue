@@ -37,11 +37,12 @@ export default {
     };
   },
   created() {
-    this.username = JSON.parse(
-      window.localStorage.getItem("user-profile")
-    ).name;
-    this.showLogin =
-      window.localStorage.getItem("user-profile") == null ? true : false;
+    if (window.localStorage.getItem("user-profile")) {
+      this.username = JSON.parse(
+        window.localStorage.getItem("user-profile")
+      ).name;
+      this.showLogin = false;
+    }
   },
   methods: {
     redirectToHome() {
