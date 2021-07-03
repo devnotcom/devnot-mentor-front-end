@@ -32,7 +32,7 @@
 export default {
   data() {
     return {
-      showLogin: false,
+      showLogin: true,
       username: null,
     };
   },
