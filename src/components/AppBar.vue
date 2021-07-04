@@ -2,8 +2,9 @@
   <v-app-bar app color="primary" dark>
     <div class="d-flex align-center">
       <v-img
-        alt="Vuetify Logo"
-        class="shrink mr-2"
+        @click="redirectToHome()"
+        alt="Devnot mentor logo"
+        class="shrink mr-2 pointer"
         contain
         src="../assets/logo.png"
         transition="scale-transition"
@@ -31,18 +32,30 @@
 export default {
   data() {
     return {
-      showLogin: false,
+      showLogin: true,
       username: null,
     };
   },
   created() {
-    this.username = JSON.parse(
-      window.localStorage.getItem("user-profile")
-    ).name;
-    this.showLogin =
-      window.localStorage.getItem("user-profile") == null ? true : false;
+    if (window.localStorage.getItem("user-profile")) {
+      this.username = JSON.parse(
+        window.localStorage.getItem("user-profile")
+      ).name;
+      this.showLogin = false;
+    }
+  },
+  methods: {
+    redirectToHome() {
+      if (this.$route.path !== "/") {
+        this.$router.push("/");
+      }
+    },
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.pointer {
+  cursor: pointer;
+}
+</style>
