@@ -37,11 +37,15 @@ describe("Login.vue", () => {
     passwordTextBox.setValue("devnotpassword");
 
     let loginButton = await wrapper.find("#signin");
-    loginButton.trigger("click");
+    await loginButton.trigger("click");
+    await Vue.nextTick();
 
     expect(axios.post).toHaveBeenCalledWith("/users/login", {
       password: "devnotpassword",
       userName: "devnotuser",
     });
+
+    expect(mockRouter.push).toHaveBeenCalledTimes(1);
+    expect(mockRouter.push).toHaveBeenCalledWith("/");
   });
 });
