@@ -11,6 +11,7 @@
         <v-text-field
           v-model="username"
           label="Username"
+          id="username"
           outlined
           rounded
         ></v-text-field>
@@ -20,6 +21,7 @@
         <v-text-field
           v-model="password"
           label="Username"
+          id="password"
           outlined
           rounded
           :append-icon="isPasswordShow ? 'mdi-eye' : 'mdi-eye-off'"
@@ -33,7 +35,13 @@
       </v-col>
 
       <v-col :cols="12" :md="12">
-        <v-btn block rounded color="primary" x-large @click="login()"
+        <v-btn
+          block
+          rounded
+          color="primary"
+          id="signin"
+          x-large
+          @click="login()"
           >Sign in</v-btn
         >
       </v-col>
@@ -63,7 +71,6 @@ export default {
         userName: this.username,
         password: this.password,
       };
-
       this.$store
         .dispatch(USER_LOGIN, obj)
         .then((res) => {

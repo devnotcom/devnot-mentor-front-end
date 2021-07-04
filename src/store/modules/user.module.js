@@ -3,7 +3,7 @@ import { USER_LOGIN } from "@/store/actions.type";
 import { SET_USER } from "@/store/mutations.type";
 
 const state = {
-  isAuth : false,
+  isAuth: false,
 };
 const getters = {};
 const actions = {
@@ -23,14 +23,8 @@ const actions = {
 const mutations = {
   [SET_USER](state, payload) {
     state.isAuth = true;
-    window.localStorage.setItem(
-      "user-token",
-      JSON.stringify(payload.data.token)
-    );
-    window.localStorage.setItem(
-      "user-profile",
-      JSON.stringify(payload.data.user)
-    );
+    window.localStorage.setItem("user-token", JSON.stringify(payload.token));
+    window.localStorage.setItem("user-profile", JSON.stringify(payload.user));
   },
 };
 
