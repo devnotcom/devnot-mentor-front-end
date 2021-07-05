@@ -1,6 +1,6 @@
 <template>
   <v-form style="max-width:400px; margin:0 auto">
-    <div class="display-3 font-weight-bold my-15">
+    <div class="display-3 font-weight-bold my-8">
       Devnot
     </div>
     <div class="display-1  my-8">
@@ -19,7 +19,7 @@
       <v-col :cols="12" :md="12" class="pad-0">
         <v-text-field
           v-model="password"
-          label="Username"
+          label="Password"
           outlined
           rounded
           :append-icon="isPasswordShow ? 'mdi-eye' : 'mdi-eye-off'"
