@@ -123,7 +123,7 @@
 
       <v-menu offset-y class="ma-0" nudge-bottom="10" max-width="220" right>
         <template v-slot:activator="{ on }">
-          <v-btn text v-on="on">
+          <v-btn text v-on="on" class="pa-2">
             <v-avatar size="35" class="mr-2">
               <img src="https://i.pravatar.cc/150?img=9" />
             </v-avatar>
@@ -150,7 +150,7 @@
 
           <v-divider></v-divider>
 
-          <v-list-item to="/settings" style="text-decoration: none">
+          <v-list-item to="/Profile" style="text-decoration: none">
             <v-list-item-icon>
               <v-icon>mdi-account-outline</v-icon>
             </v-list-item-icon>

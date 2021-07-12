@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
-    <v-row>
-      <v-col :cols="3">
+    <v-row class="mt-5">
+      <v-col :cols="12" :sm="12" :md="3" :lg="3">
         <v-card>
           <v-col class="d-flex justify-end pad-0">
             <v-btn x-large icon>
@@ -9,7 +9,9 @@
             </v-btn>
           </v-col>
           <v-col class="text-center" :cols="12">
-            <v-avatar color="primary" size="150"></v-avatar>
+            <v-avatar color="primary" size="150">
+              <img src="https://i.pravatar.cc/150?img=9" />
+            </v-avatar>
           </v-col>
           <v-col class="text-center" :cols="12">
             <v-card-title class="pad-0 justify-center">
@@ -30,7 +32,7 @@
               dark
               medium
               :color="item.color"
-              style="font-size:16px"
+              style="font-size: 16px"
             >
               <faIcon :icon="['fab', item.icon]" />
             </v-btn>
@@ -49,28 +51,31 @@
               text-color="white"
             >
               {{ item.name }}
-              <v-icon right>
-                mdi-star
-              </v-icon>
+              <v-icon right> mdi-star </v-icon>
             </v-chip>
           </v-col>
         </v-card>
       </v-col>
-      <v-col :cols="9">
-        <v-card>test2</v-card>
+      <v-col :cols="12" :sm="12" :md="9" :lg="9">
+        <Dashboard />
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
+import Dashboard from "../components/Dashboard.vue";
+
 export default {
+  components: {
+    Dashboard,
+  },
   data() {
     return {
       userInfo: {
         id: 1,
-        title: "Ünvan",
-        fullName: "İsim Soyisim",
+        title: "Software Developer",
+        fullName: "Merve Soykan",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sedtincidunt justo tristique velit lacinia euismod. Donec accumsan ante mi. Sed iaculis purus at scelerisque iaculis. Suspendisse potenti.",
         social: [
