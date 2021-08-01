@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="primary" dark>
+  <v-app-bar app color="blue-grey darken-4" dark>
     <div class="d-flex align-center">
       <v-img
         @click="redirectToHome()"
@@ -11,11 +11,22 @@
         width="200"
       />
     </div>
-
-    <v-spacer></v-spacer>
+    <v-row>
+      <v-col :md="12" :sm="12" :cols="12" class="pr-10 text-right">
+        <v-btn href="/Mentors" text right v-if="mobile" class="mr-n6">
+          <v-icon>mdi-account-multiple-outline</v-icon>
+        </v-btn>
+        <v-btn href="/Mentors" text right v-else>
+          <v-icon>mdi-account-multiple-outline</v-icon>
+          <span class="ml-2">Mentorler</span>
+        </v-btn>
+      </v-col>
+    </v-row>
+    <!-- <v-spacer></v-spacer> -->
     <div v-if="isLoggedIn">
       <v-menu
         :close-on-content-click="false"
+        i
         left
         origin="left"
         class="ma-0"
@@ -213,6 +224,12 @@ export default {
       ).name;
       this.showLogin = false;
     }
+  },
+  computed: {
+    mobile() {
+      console.log(this.$vuetify.breakpoint.xs);
+      return this.$vuetify.breakpoint.xs;
+    },
   },
   methods: {
     redirectToHome() {
