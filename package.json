@@ -9,7 +9,7 @@
     "build-staging": "vue-cli-service build --mode staging",
     "dev": "vue-cli-service serve --mode development",
     "production": "vue-cli-service serve --mode production",
-    "stagging": "vue-cli-service serve --mode stagging"
+    "staging": "vue-cli-service serve --mode staging"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
